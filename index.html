@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>K.J. Somaiya Polytechnic - Student Result</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='50%' y='50%' text-anchor='middle' fill='%23cccccc' font-size='100' font-family='Arial' transform='rotate(-30, 200, 200)' opacity='0.1'%3ESOMAIYA%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-position: center;
+    }
+
+    .header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      position: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      width: 60px;
+      height: auto;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      background-color: #0055aa;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004080;
+    }
+
+    .error {
+      color: red;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    img.result-img {
+      margin-top: 30px;
+      max-width: 100%;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>K.J. Somaiya Polytechnic Vidyavihar</h1>
+    <img src="som logo.webp" alt="College Logo" class="logo">
+  </div>
+
+  <div class="container">
+    <p><strong>Enter Enrollment Number</strong></p>
+    <input type="text" id="rollInput" placeholder="">
+    <br>
+    <button onclick="showResult()">Submit</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function showResult() {
+      const roll = document.getElementById("rollInput").value.trim().toUpperCase();
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "";
+
+      if (roll === "FCUG24749") {
+        const img = document.createElement("img");
+        img.src = "timetable.jpg";
+        img.alt = "Student Result";
+        img.className = "result-img";
+        resultDiv.appendChild(img);
+      } else {
+        const error = document.createElement("div");
+        error.className = "error";
+        error.textContent = "Invalid enrollment number. Please try again.";
+        resultDiv.appendChild(error);
+      }
+    }
+  </script>
+
+</body>
+</html>
